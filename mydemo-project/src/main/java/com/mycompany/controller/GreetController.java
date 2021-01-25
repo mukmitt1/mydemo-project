@@ -12,9 +12,10 @@ public class GreetController {
 	 
     @GetMapping("/greet/{name}")
     public String greet(@PathVariable String name, ModelMap model) {
-        String greet = "Hello!!! " + name + " How are You?";
+        String greet = "Hello!!! " + name + " How are You (v2)?";
         logger.info(greet);
         return greet;
     }
 	
 }
+ 
