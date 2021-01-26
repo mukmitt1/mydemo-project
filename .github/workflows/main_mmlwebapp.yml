@@ -21,7 +21,7 @@ jobs:
         java-version: '8'
 
     - name: Build with Maven
-      run: mvn clean install
+      run: mvn clean install --file mydemo-project/pom.xml
 
     - name: Deploy to Azure Web App
       uses: azure/webapps-deploy@v2
@@ -29,4 +29,4 @@ jobs:
         app-name: 'mmlwebapp'
         slot-name: 'production'
         publish-profile: ${{ secrets.AzureAppService_PublishProfile_1a930a66f6ee47b6b1df0ff9172c3718 }}
-        package: '${{ github.workspace }}/target/*.war'
+        package: '${{ github.workspace }}/mydemo-project/target/*.war'
